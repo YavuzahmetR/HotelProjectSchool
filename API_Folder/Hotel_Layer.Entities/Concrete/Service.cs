@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hotel_Layer.Entities.Concrete
 {
-    public class Services
+    public class Service
     {
         public int ServiceID { get; set; }
         public string ServiceIcon { get; set; }

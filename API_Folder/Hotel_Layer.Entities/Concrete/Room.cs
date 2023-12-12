@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hotel_Layer.Entities.Concrete
 {
-    public class Rooms
+    public class Room
     {
         public int RoomID { get; set; }
         public string RoomNumber { get; set; }
