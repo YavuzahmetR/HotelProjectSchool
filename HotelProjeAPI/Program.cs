@@ -1,4 +1,10 @@
 
+using Hotel_Layer.Business.Abstract;
+using Hotel_Layer.Business.Concrete;
+using Hotel_Layer.DataAccess.Abstract;
+using Hotel_Layer.DataAccess.Concrete;
+using Hotel_Layer.DataAccess.EF;
+
 namespace HotelProjeAPI
 {
     public class Program
@@ -13,7 +19,21 @@ namespace HotelProjeAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<Context>();
+            builder.Services.AddScoped<IStaffDal,EfStaffDal>();
+            builder.Services.AddScoped<IStaffService,StaffManager>();
 
+            builder.Services.AddScoped<IServiceDal, EfServiceDal>();
+            builder.Services.AddScoped<IService_Service, ServiceManager>();
+
+            builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+            builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+
+            builder.Services.AddScoped<ISubscriberDal, EfSubscriberDal>();
+            builder.Services.AddScoped<ISubscriberService, SubscriberManager>();
+
+            builder.Services.AddScoped<IRoomDal, EfRoomDal>();
+            builder.Services.AddScoped<IRoomService, RoomManager>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
