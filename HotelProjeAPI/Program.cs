@@ -34,6 +34,15 @@ namespace HotelProjeAPI
 
             builder.Services.AddScoped<IRoomDal, EfRoomDal>();
             builder.Services.AddScoped<IRoomService, RoomManager>();
+
+            builder.Services.AddCors(opt =>
+            {
+                opt.AddPolicy("ApiCors", opts =>
+                {
+                    opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -44,7 +53,7 @@ namespace HotelProjeAPI
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors("ApiCors");
             app.UseAuthorization();
 
 
