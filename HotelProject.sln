@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API_Folder", "API_Folder", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{361126AE-A428-4CD7-8382-51764A0A0AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProjectUI", "Frontend\HotelProjectUI\HotelProjectUI.csproj", "{636C1C06-DAD4-4B97-AA9A-1B10AC9753AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProjectUI", "Frontend\HotelProjectUI\HotelProjectUI.csproj", "{636C1C06-DAD4-4B97-AA9A-1B10AC9753AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel_Layer.Entities", "API_Folder\Hotel_Layer.Entities\Hotel_Layer.Entities.csproj", "{1956A496-459D-4CAD-84D0-67094B2F9F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel_Layer.Entities", "API_Folder\Hotel_Layer.Entities\Hotel_Layer.Entities.csproj", "{1956A496-459D-4CAD-84D0-67094B2F9F22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel_Layer.DTO", "API_Folder\Hotel_Layer.DTO\Hotel_Layer.DTO.csproj", "{0BE4B5CC-7937-42C6-BD26-32C5EEDE8F2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel_Layer.DTO", "API_Folder\Hotel_Layer.DTO\Hotel_Layer.DTO.csproj", "{0BE4B5CC-7937-42C6-BD26-32C5EEDE8F2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel_Layer.DataAccess", "API_Folder\Hotel_Layer.DataAccess\Hotel_Layer.DataAccess.csproj", "{AE292366-4978-4228-BFF7-A3D64F059B3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel_Layer.DataAccess", "API_Folder\Hotel_Layer.DataAccess\Hotel_Layer.DataAccess.csproj", "{AE292366-4978-4228-BFF7-A3D64F059B3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel_Layer.Business", "API_Folder\Hotel_Layer.Business\Hotel_Layer.Business.csproj", "{FB83DDD1-6DF4-4B0D-932F-B60B5F4D3F0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel_Layer.Business", "API_Folder\Hotel_Layer.Business\Hotel_Layer.Business.csproj", "{FB83DDD1-6DF4-4B0D-932F-B60B5F4D3F0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
