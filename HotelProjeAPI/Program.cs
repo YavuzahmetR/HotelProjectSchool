@@ -35,6 +35,8 @@ namespace HotelProjeAPI
             builder.Services.AddScoped<IRoomDal, EfRoomDal>();
             builder.Services.AddScoped<IRoomService, RoomManager>();
 
+            builder.Services.AddAutoMapper(typeof(Program));
+
             builder.Services.AddCors(opt =>
             {
                 opt.AddPolicy("ApiCors", opts =>
