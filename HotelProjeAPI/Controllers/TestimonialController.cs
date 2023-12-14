@@ -26,7 +26,7 @@ namespace HotelProjeAPI.Controllers
             var value = _testimonialService.TGetById(id);
             return Ok(value);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteTestimonial(int id)
         {
             var value = _testimonialService.TGetById(id);
