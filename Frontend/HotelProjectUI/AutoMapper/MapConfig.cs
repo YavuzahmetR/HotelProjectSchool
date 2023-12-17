@@ -26,6 +26,7 @@ namespace HotelProjectUI.AutoMapper
             CreateMap<ResultStaffDto, Staff>().ReverseMap();
             CreateMap<CreateSubscriberDto, Subscriber>().ReverseMap();
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
+            CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
         }
     }
 }
