@@ -26,11 +26,16 @@ namespace HotelProjectUI.Controllers
         public async Task <IActionResult> AddBooking(CreateBookingDto createBookingDto)
         {
             createBookingDto.Status = "Onay Bekliyor";
+            createBookingDto.Description = "";
             var client = _httpClientFactory.CreateClient();
             var dataJs = JsonConvert.SerializeObject(createBookingDto);
             StringContent content = new StringContent(dataJs, Encoding.UTF8, "application/json");
-            await client.PostAsync("https://localhost:7120/api/Booking", content);
-            return RedirectToAction("Index", "Default");
+            var response = await client.PostAsync("https://localhost:7120/api/Booking", content);
+            if(response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index", "Default");
+            }
+            return View();
         }
     }
 }
