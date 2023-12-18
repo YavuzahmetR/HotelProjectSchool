@@ -25,12 +25,24 @@ namespace HotelProjectUI.Controllers
             }
             return View();
         }
-        public async Task<IActionResult> ApprovedReservation(ApprovedReservationDto approvedReservationDto)
+        public async Task<IActionResult> ApprovedReservationAPI(ApprovedReservationDto approvedReservationDto)
         {           
             var client = _httpClientFactory.CreateClient();
             var dataJs = JsonConvert.SerializeObject(approvedReservationDto);
             StringContent content = new StringContent(dataJs, Encoding.UTF8, "application/json");
-            var response = await client.PutAsync($"https://localhost:7120/api/Booking/bbbb", content);
+            var response = await client.PutAsync($"https://localhost:7120/api/Booking/BookingStatusChangeAPI", content);
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        public async Task<IActionResult> ApprovedReservationAdmin(ApprovedReservationDto approvedReservationDto,int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var dataJs = JsonConvert.SerializeObject(approvedReservationDto);
+            StringContent content = new StringContent(dataJs, Encoding.UTF8, "application/json");
+            var response = await client.PutAsync($"https://localhost:7120/api/Booking/BookingStatusChangeAdmin?id="+id, content);
             if (response.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
