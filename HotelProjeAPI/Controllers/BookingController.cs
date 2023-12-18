@@ -45,16 +45,16 @@ namespace HotelProjeAPI.Controllers
             var value = _bookingService.TGetById(id);
             return Ok(value);
         }
-        [HttpPut("aaaaa")]
-        public IActionResult aaaaa(Booking booking)
+        [HttpPut("BookingStatusChangeAPI")]
+        public IActionResult BookingStatusChangeAPI(Booking booking)
         {
-            _bookingService.TBookingStatusChangeApproved(booking);
+            _bookingService.TBookingStatusChangeApprovedAPI(booking);
             return Ok();
         }
-        [HttpPut("bbbb")]
-        public IActionResult bbbb(int id)
+        [HttpPut("BookingStatusChangeAdmin")]
+        public IActionResult BookingStatusChangeAdmin(int id)
         {
-            _bookingService.TBookingStatusChangeApproved2(id);
+            _bookingService.TBookingStatusChangeApprovedAdmin(id);
             return Ok();
         }
     }
