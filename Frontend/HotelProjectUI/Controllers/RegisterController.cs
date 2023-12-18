@@ -35,7 +35,7 @@ namespace HotelProjectUI.Controllers
             var userPasswordResult = await _userManager.CreateAsync(appUser,createUserDto.Password);
             if(userPasswordResult.Succeeded)
             {
-                return RedirectToAction("Index","Login");
+                return RedirectToAction("Index","SignIn");
             }
             return View();
         }
