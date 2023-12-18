@@ -9,7 +9,7 @@ namespace Hotel_Layer.DataAccess.Abstract
 {
     public interface IBookingDal : IGenericDal<Booking>
     {
-        void BookingStatusChangeApproved(Booking booking);
-        void BookingStatusChangeApproved2(int id);
+        void BookingStatusChangeApprovedAPI(Booking booking);
+        void BookingStatusChangeApprovedAdmin(int id);
     }
 }

@@ -18,14 +18,14 @@ namespace Hotel_Layer.Business.Concrete
             _bookingDal = bookingDal;
         }
 
-        public void TBookingStatusChangeApproved(Booking booking)
+        public void TBookingStatusChangeApprovedAPI(Booking booking)
         {
-            _bookingDal.BookingStatusChangeApproved(booking);
+            _bookingDal.BookingStatusChangeApprovedAPI(booking);
         }
 
-        public void TBookingStatusChangeApproved2(int id)
+        public void TBookingStatusChangeApprovedAdmin(int id)
         {
-            _bookingDal.BookingStatusChangeApproved2(id);
+            _bookingDal.BookingStatusChangeApprovedAdmin(id);
         }
 
         public void TDelete(Booking t)

@@ -9,7 +9,7 @@ namespace Hotel_Layer.Business.Abstract
 {
     public interface IBookingService : IGenericService<Booking>
     {
-        void TBookingStatusChangeApproved(Booking booking);
-        void TBookingStatusChangeApproved2(int id);
+        void TBookingStatusChangeApprovedAPI(Booking booking);
+        void TBookingStatusChangeApprovedAdmin(int id);
     }
 }

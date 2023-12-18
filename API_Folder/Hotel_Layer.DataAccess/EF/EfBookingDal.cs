@@ -17,7 +17,7 @@ namespace Hotel_Layer.DataAccess.EF
 
         }
 
-        public void BookingStatusChangeApproved(Booking booking)
+        public void BookingStatusChangeApprovedAPI(Booking booking)
         {
             var context = new Context();
             var values = context.Bookings.Where(x => x.BookingID == booking.BookingID).FirstOrDefault();
@@ -25,7 +25,7 @@ namespace Hotel_Layer.DataAccess.EF
             context.SaveChanges();
         }
 
-        public void BookingStatusChangeApproved2(int id)
+        public void BookingStatusChangeApprovedAdmin(int id)
         {
             var context = new Context();
             var values = context.Bookings.Find(id);
