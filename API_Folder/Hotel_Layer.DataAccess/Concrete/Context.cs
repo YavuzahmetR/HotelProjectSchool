@@ -15,6 +15,23 @@ namespace Hotel_Layer.DataAccess.Concrete
         {
             optionsBuilder.UseSqlServer("Data Source=LAPTOP-1PLLIFRV\\SQLEXPRESS;Initial Catalog=HotelProject;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<Room>(entry =>
+            {
+                entry.ToTable("Rooms", tb => tb.HasTrigger("RoomIncrease"));
+            });
+            builder.Entity<Staff>(entry =>
+            {
+                entry.ToTable("Staffs", tb => tb.HasTrigger("StaffIncrease"));
+            });
+            builder.Entity<Guest>(entry =>
+            {
+                entry.ToTable("Guests", tb => tb.HasTrigger("GuestIncrease"));
+            });
+        }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Staff> Staffs { get; set; }
