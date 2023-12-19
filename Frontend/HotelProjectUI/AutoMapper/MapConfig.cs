@@ -5,6 +5,7 @@ using HotelProjectUI.Dtos.AppUserDto;
 using HotelProjectUI.Dtos.BookingDto;
 using HotelProjectUI.Dtos.ContactDto;
 using HotelProjectUI.Dtos.LoginDto;
+using HotelProjectUI.Dtos.RoomDto;
 using HotelProjectUI.Dtos.ServiceDto;
 using HotelProjectUI.Dtos.StaffDto;
 using HotelProjectUI.Dtos.Subscriber;
@@ -29,6 +30,10 @@ namespace HotelProjectUI.AutoMapper
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
             CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
             CreateMap<CreateContactDto,Contact>().ReverseMap();
+            CreateMap<ResultRoomDto, Room>().ReverseMap();
+            CreateMap<CreateRoomDto, Room>().ReverseMap();
+            CreateMap<UpdateRoomDto, Room>().ReverseMap();
+
         }
     }
 }
