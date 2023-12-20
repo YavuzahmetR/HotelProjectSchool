@@ -32,15 +32,20 @@ namespace HotelProjectUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddGuest(CreateGuestDto guestDto)
         {
-            var client = _httpClientFactory.CreateClient();
-            var dataJs = JsonConvert.SerializeObject(guestDto);
-            StringContent content = new StringContent(dataJs,Encoding.UTF8,"application/json");
-            var response = await client.PostAsync("https://localhost:7120/api/Guest",content);
-            if(response.IsSuccessStatusCode)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                var client = _httpClientFactory.CreateClient();
+                var dataJs = JsonConvert.SerializeObject(guestDto);
+                StringContent content = new StringContent(dataJs, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync("https://localhost:7120/api/Guest", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
-            return View();
+            else { return View(); }
+            
         }
         public async Task<IActionResult> DeleteGuest(int id)
         {
@@ -68,15 +73,20 @@ namespace HotelProjectUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateGuest(UpdateGuestDto guestDto)
         {
-            var client = _httpClientFactory.CreateClient();
-            var dataJs = JsonConvert.SerializeObject(guestDto);
-            StringContent content = new StringContent(dataJs,Encoding.UTF8,"application/json");
-            var response = await client.PutAsync("https://localhost:7120/api/Guest", content);
-            if(response.IsSuccessStatusCode)
+            if(ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                var client = _httpClientFactory.CreateClient();
+                var dataJs = JsonConvert.SerializeObject(guestDto);
+                StringContent content = new StringContent(dataJs, Encoding.UTF8, "application/json");
+                var response = await client.PutAsync("https://localhost:7120/api/Guest", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
-            return View();
+            else { return View(); }
+           
         }
 
     }
