@@ -1,0 +1,4 @@
+mesaj sayfasý üzerinde düzenleme yapýlmalý.
+yanýt kýsmý için mail gönderim iþlemi yapýlmalý.
+giden kutusunda ftgraflar dinamik getirilmeli.
+subject ve recevier renklendirilmeli.
