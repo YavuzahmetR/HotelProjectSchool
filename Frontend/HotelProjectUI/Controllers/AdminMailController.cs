@@ -35,7 +35,7 @@ namespace HotelProjectUI.Controllers
             //Smtp sunucusuna bağlanma
             client.Connect("smtp.gmail.com", 587, false/*ssl*/);
             //Giriş yapma
-            client.Authenticate("ayavuzisik@gmail.com", "vvohzwjvqjofqjss");
+            client.Authenticate("ayavuzisik@gmail.com", "vvohzwjvqjofqjss"); //yeni şifre alınmalı 2 adımlı doğrulama sayfasından. VisualStudio
             //Maili gönderme
             client.Send(mimeMessage);
             //Bağlantıyı kapatma
