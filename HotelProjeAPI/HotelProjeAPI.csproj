@@ -32,4 +32,9 @@
     <ProjectReference Include="..\API_Folder\Hotel_Layer.Entities\Hotel_Layer.Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="files\" />
+  </ItemGroup>
+
 </Project>
