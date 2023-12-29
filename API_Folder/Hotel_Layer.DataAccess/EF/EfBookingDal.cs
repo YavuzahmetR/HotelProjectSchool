@@ -19,18 +19,25 @@ namespace Hotel_Layer.DataAccess.EF
 
         public void BookingStatusChangeApprovedAPI(Booking booking)
         {
-            var context = new Context();
-            var values = context.Bookings.Where(x => x.BookingID == booking.BookingID).FirstOrDefault();
-            values.Status = "Onaylandı";
-            context.SaveChanges();
+            using (var context = new Context())
+            {
+                var values = context.Bookings.Where(x => x.BookingID == booking.BookingID).FirstOrDefault();
+                values.Status = "Onaylandı";
+                context.SaveChanges();
+            }
         }
 
         public void BookingStatusChangeApprovedAdmin(int id)
         {
-            var context = new Context();
-            var values = context.Bookings.Find(id);
-            values.Status = "Onaylandı";
-            context.SaveChanges();
+            using (var context = new Context())
+            {
+                var values = context.Bookings.Find(id);
+                if (values != null)
+                {
+                    values.Status = "Onaylandı";
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }

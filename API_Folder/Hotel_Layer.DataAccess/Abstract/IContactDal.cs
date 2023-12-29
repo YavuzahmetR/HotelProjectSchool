@@ -9,5 +9,6 @@ namespace Hotel_Layer.DataAccess.Abstract
 {
     public interface IContactDal:IGenericDal<Contact>
     {
+        int GetContactNumber();
     }
 }

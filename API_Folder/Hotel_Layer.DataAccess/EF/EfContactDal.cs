@@ -13,5 +13,13 @@ namespace Hotel_Layer.DataAccess.EF
     public class EfContactDal : GenericRepository<Contact>, IContactDal
     {
         public EfContactDal(Context context):base(context) { }
+
+        public int GetContactNumber()
+        {
+           using(var context = new Context())
+            {
+                return context.Contacts.Count();
+            }
+        }
     }
 }

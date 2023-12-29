@@ -13,5 +13,13 @@ namespace Hotel_Layer.DataAccess.EF
     public class EfSendMessageDal : GenericRepository<SendMessage>, ISendMessageDal
     {
         public EfSendMessageDal(Context context) : base(context) { }
+
+        public int GetSendMessageNumber()
+        {
+            using(var context = new Context())
+            {
+                return context.SendMessages.Count();
+            }
+        }
     }
 }

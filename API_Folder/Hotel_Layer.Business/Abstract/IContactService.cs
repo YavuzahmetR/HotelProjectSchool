@@ -9,5 +9,6 @@ namespace Hotel_Layer.Business.Abstract
 {
     public interface IContactService:IGenericService<Contact>
     {
+        int TGetContactNumber();
     }
 }
