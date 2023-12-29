@@ -45,5 +45,10 @@ namespace HotelProjeAPI.Controllers
             _sendMessageService.TDelete(value);
             return Ok();
         }
+        [HttpGet("GetSendMessageNumber")]
+        public IActionResult GetSendMessageNumber()
+        {
+            return Ok(_sendMessageService.TGetSendMessageNumber());
+        }
     }
 }
