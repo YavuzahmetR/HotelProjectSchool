@@ -6,7 +6,7 @@ namespace HotelProjectUI.Dtos.AppUserDto
     {
         [Required(ErrorMessage = "İsim Alanı Boş Geçilemez!")]
         public string Name { get; set; }
-        public string? City { get; set; }   
+        public string City { get; set; }   
         [Required(ErrorMessage = "Soyisim Alanı Boş Geçilemez!")]
         public string Surname { get; set; }
         [Required(ErrorMessage = "Kullanıcı Adı Alanı Boş Geçilemez!")]
