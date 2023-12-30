@@ -13,6 +13,8 @@ namespace Hotel_Layer.Entities.Concrete
         public string Mail { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
+        public int MessageCategoryID { get; set; }
+        //public MessageCategory MessageCategory { get; set; }
         public DateTime Date { get; set; }
     }
 }
