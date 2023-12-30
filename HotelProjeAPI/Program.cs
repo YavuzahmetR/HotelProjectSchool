@@ -53,6 +53,9 @@ namespace HotelProjeAPI
             builder.Services.AddScoped<IMessageCategoryDal, EfMessageCategoryDal>();
             builder.Services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
 
+            builder.Services.AddScoped<ICityDal, EfCityDal>();
+            builder.Services.AddScoped<ICityService, CityManager>();
+
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddCors(opt =>
