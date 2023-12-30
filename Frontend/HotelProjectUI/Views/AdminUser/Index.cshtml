@@ -19,7 +19,14 @@
                 <td><img src="@item.ImageUrl" class=" rounded-circle mr-3" alt=""></td>
                 <td>@item.Name @item.Surname</td>
                 <td>@item.City</td>
-                <td><i class="fa fa-circle-o text-success"></i> Aktif</td>
+                @if(item.LockoutEnabled == true)
+                {
+                    <td><i class="fa fa-circle-o text-success"></i> Aktif</td>
+                }
+                else
+                {
+                    <td><i class="fa fa-circle-o text-warning"></i> Pasif</td>
+                }
             </tr>
         }
     </tbody>
