@@ -15,7 +15,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="~/adminweb/assets/images/favicon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="~/adminweb/css/style.css" rel="stylesheet">
+    <style>
+        .custom-dropdown {
+        }
 
+            .custom-dropdown option:checked {
+                background-color: lightskyblue;
+                color: #000000;
+            }
+    </style>
 </head>
 
 <body class="h-100">
@@ -57,9 +65,8 @@
                                         <input type="text" class="form-control" placeholder="Soyad" asp-for="Surname">
                                         <span asp-validation-for="Surname" class="text-danger"></span>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Şehir" asp-for="City">
-                                        <span asp-validation-for="City" class="text-danger"></span>
+                                    <div class="form-group custom-dropdown-container" style="background-color: bisque; border: 2px solid darkorange; border-radius: 8px; padding: 3px; color:black" >
+                                        @Html.DropDownListFor(x => x.City, (List<SelectListItem>)ViewBag.City, new {@class = "form-control custom-dropdown"})
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Kullanıcı Adı" asp-for="UserName">

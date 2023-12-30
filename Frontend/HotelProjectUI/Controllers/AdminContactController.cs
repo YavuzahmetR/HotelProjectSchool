@@ -24,7 +24,7 @@ namespace HotelProjectUI.Controllers
             var response2 = await client2.GetAsync("https://localhost:7120/api/Contact/GetContactNumber");
 
             var client3 = _httpClientFactory.CreateClient();
-            var response3 = await client2.GetAsync("https://localhost:7120/api/SendMessage/GetSendMessageNumber");
+            var response3 = await client3.GetAsync("https://localhost:7120/api/SendMessage/GetSendMessageNumber");
             if (response.IsSuccessStatusCode)
             {
                 var dataJs = await response.Content.ReadAsStringAsync();
