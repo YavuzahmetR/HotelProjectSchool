@@ -43,5 +43,6 @@ namespace Hotel_Layer.DataAccess.Concrete
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<SendMessage> SendMessages { get; set; }
         public DbSet<MessageCategory> MessageCategories { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
 }
