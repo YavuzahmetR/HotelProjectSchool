@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace HotelProjectUI.Controllers
@@ -15,11 +16,13 @@ namespace HotelProjectUI.Controllers
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly Context _context;
         private readonly IHttpClientFactory _httpClientFactory;
-        public RegisterController(UserManager<AppUser> userManager, IHttpClientFactory httpClientFactory)
+        public RegisterController(UserManager<AppUser> userManager, IHttpClientFactory httpClientFactory, Context context)
         {
             _userManager = userManager;
             _httpClientFactory = httpClientFactory;
+            _context = context;
         }
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -41,18 +44,23 @@ namespace HotelProjectUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CreateUserDto createUserDto)
         {
+            Random rand = new Random();
             if(!ModelState.IsValid)
             {
                 return View();
             }
-            
+            int workPlaceId = rand.Next(1,6);
+            var workPlace = _context.WorkPlaces.FirstOrDefault(wp => wp.WorkPlaceID == workPlaceId);
             var appUser = new AppUser
             {
                 Name = createUserDto.Name,
                 Email = createUserDto.Email,
                 Surname = createUserDto.Surname,
                 UserName = createUserDto.UserName,
-                City = createUserDto.City
+                City = createUserDto.City,
+                WorkPlaceID = workPlaceId,
+                WorkDepartment = workPlace?.WorkPlaceName,
+                ImageUrl = "/adminweb/images/avatar/4.jpg"
             };
             var userPasswordResult = await _userManager.CreateAsync(appUser,createUserDto.Password);
             if(userPasswordResult.Succeeded)
