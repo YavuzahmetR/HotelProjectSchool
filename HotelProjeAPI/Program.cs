@@ -56,6 +56,12 @@ namespace HotelProjeAPI
             builder.Services.AddScoped<ICityDal, EfCityDal>();
             builder.Services.AddScoped<ICityService, CityManager>();
 
+            builder.Services.AddScoped<IWorkPlaceDal, EfWorkPlaceDal>();
+            builder.Services.AddScoped<IWorkPlaceService, WorkPlaceManager>();
+
+            builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+            builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddCors(opt =>
@@ -65,7 +71,7 @@ namespace HotelProjeAPI
                     opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
-
+            builder.Services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
