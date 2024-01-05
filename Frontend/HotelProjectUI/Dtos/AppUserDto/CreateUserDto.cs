@@ -18,6 +18,7 @@ namespace HotelProjectUI.Dtos.AppUserDto
         [Required(ErrorMessage ="Şifre Alanı Boş Geçilemez!")]
         [Compare("Password",ErrorMessage ="Şifreler Uyuşmuyor Tekrar Deneyin!")]
         public string ConfirmPassword { get; set; }
+        public int WorkPlaceID { get; set; }
 
     }
 }
