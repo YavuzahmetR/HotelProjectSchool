@@ -24,6 +24,8 @@ namespace HotelProjectUI.AutoMapper
             CreateMap<UpdateServiceDto, Service>().ReverseMap();
             CreateMap<CreateUserDto, AppUser>().ReverseMap();
             CreateMap<SignInUserDto,AppUser>().ReverseMap();
+            CreateMap<ResultAppUserDto, AppUser>().ReverseMap();    
+            CreateMap<ResultAppUserWithWorkPlacesDto,AppUser>().ReverseMap(); 
             CreateMap<ResultAboutDto, About>().ReverseMap();
             CreateMap<UpdateAboutDto, About>().ReverseMap();
             CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
@@ -39,6 +41,7 @@ namespace HotelProjectUI.AutoMapper
             CreateMap<CreateGuestDto, Guest>().ReverseMap();
             CreateMap<UpdateGuestDto, Guest>().ReverseMap();
             CreateMap<ResultMessageCategoryDto, MessageCategory>().ReverseMap();
+            
 
         }
     }
