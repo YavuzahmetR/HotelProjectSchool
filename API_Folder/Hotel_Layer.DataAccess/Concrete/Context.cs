@@ -13,7 +13,8 @@ namespace Hotel_Layer.DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-1PLLIFRV\\SQLEXPRESS;Initial Catalog=HotelProject;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            //optionsBuilder.UseSqlServer("Data Source=LAPTOP-1PLLIFRV\\SQLEXPRESS;Initial Catalog=HotelProject;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\\Users\\Arrow\\source\\repos\\HotelProject\\API_Folder\\Hotel_Layer.DataAccess\\bin\\Debug\\net7.0\\HotelLocalDb.mdf;");
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -44,5 +45,6 @@ namespace Hotel_Layer.DataAccess.Concrete
         public DbSet<SendMessage> SendMessages { get; set; }
         public DbSet<MessageCategory> MessageCategories { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<WorkPlace> WorkPlaces { get; set; }
     }
 }

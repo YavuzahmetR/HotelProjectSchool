@@ -22,7 +22,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hotel_Layer.DTO\Hotel_Layer.DTO.csproj" />
     <ProjectReference Include="..\Hotel_Layer.Entities\Hotel_Layer.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HotelLocalDb.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
