@@ -52,5 +52,15 @@ namespace Hotel_Layer.Business.Concrete
         {
             _bookingDal.Update(t);
         }
+
+        public int TGetBookingCount()
+        {
+            return _bookingDal.GetBookingCount();
+        }
+
+        public List<Booking> TLast6Bookings()
+        {
+            return _bookingDal.Last6Bookings();
+        }
     }
 }
