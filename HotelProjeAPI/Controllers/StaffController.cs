@@ -45,5 +45,12 @@ namespace HotelProjeAPI.Controllers
             _staffService.TDelete(value);
             return Ok();
         }
+        [HttpGet("Last4Staff")]
+
+        public IActionResult Last4Staff()
+        {
+            var values = _staffService.TLast4Staff();
+            return Ok(values);
+        }
     }
 }
