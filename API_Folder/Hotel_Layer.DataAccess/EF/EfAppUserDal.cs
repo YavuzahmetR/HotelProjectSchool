@@ -18,6 +18,13 @@ namespace Hotel_Layer.DataAccess.EF
         {
         }
 
+        public int AppUserCount()
+        {
+            var context = new Context();
+            var value = context.Users.Count();
+            return value;
+        }
+
         public List<AppUser> UserListWithWorkPlace()
         {
             using(var context = new Context())

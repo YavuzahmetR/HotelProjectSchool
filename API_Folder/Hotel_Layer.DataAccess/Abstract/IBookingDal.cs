@@ -11,5 +11,7 @@ namespace Hotel_Layer.DataAccess.Abstract
     {
         void BookingStatusChangeApprovedAPI(Booking booking);
         void BookingStatusChangeApprovedAdmin(int id);
+        int GetBookingCount();
+        List<Booking> Last6Bookings();
     }
 }
