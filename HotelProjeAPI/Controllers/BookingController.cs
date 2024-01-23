@@ -57,6 +57,18 @@ namespace HotelProjeAPI.Controllers
             _bookingService.TBookingStatusChangeApprovedAdmin(id);
             return Ok();
         }
+        [HttpPut("BookingStatusChangeCanceled")]
+        public IActionResult BookingStatusChangeCanceled(int id)
+        {
+            _bookingService.TBookingStatusChangeCanceled(id);
+            return Ok();
+        }
+        [HttpPut("BookingStatusChangeWaitLine")]
+        public IActionResult BookingStatusChangeWaitLine(int id)
+        {
+            _bookingService.TBookingStatusChangeWaitLine(id);
+            return Ok();
+        }
         [HttpGet("Last6Booking")]
         public IActionResult Last6Booking()
         {
