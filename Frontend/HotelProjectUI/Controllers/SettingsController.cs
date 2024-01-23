@@ -36,7 +36,7 @@ namespace HotelProjectUI.Controllers
                 user.Email = userEditViewModel.Email;
                 user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, userEditViewModel.Password);
                 await _userManager.UpdateAsync(user);
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "SignIn");
             }
             return View();
         }
