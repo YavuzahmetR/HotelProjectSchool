@@ -42,16 +42,48 @@ namespace Hotel_Layer.DataAccess.EF
 
         public int GetBookingCount()
         {
-            var context = new Context();
-            var value = context.Bookings.Count();
-            return value;
+            using (var context = new Context())
+            {
+                var value = context.Bookings.Count();
+                return value;
+            }
+               
         }
 
         public List<Booking> Last6Bookings()
         {
-            var context = new Context();
-            var values = context.Bookings.OrderByDescending(x => x.BookingID).Take(6).ToList();
-            return values;
+            using (var context = new Context())
+            {
+                var values = context.Bookings.OrderByDescending(x => x.BookingID).Take(6).ToList();
+                return values;
+            }
+           
+        }
+
+        public void BookingStatusChangeCanceled(int id)
+        {
+            using (var context = new Context())
+            {
+                var values = context.Bookings.Find(id);
+                if(values != null)
+                {
+                    values.Status = "İptal Edildi";
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        public void BookingStatusChangeWaitLine(int id)
+        {
+            using (var context = new Context())
+            {
+                var values = context.Bookings.Find(id);
+                if (values != null)
+                {
+                    values.Status = "Rezervasyon Beklemede";
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }

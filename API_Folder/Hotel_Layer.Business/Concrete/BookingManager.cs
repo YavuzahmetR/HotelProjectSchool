@@ -62,5 +62,15 @@ namespace Hotel_Layer.Business.Concrete
         {
             return _bookingDal.Last6Bookings();
         }
+
+        public void TBookingStatusChangeCanceled(int id)
+        {
+            _bookingDal.BookingStatusChangeCanceled(id);
+        }
+
+        public void TBookingStatusChangeWaitLine(int id)
+        {
+            _bookingDal.BookingStatusChangeWaitLine(id);
+        }
     }
 }
