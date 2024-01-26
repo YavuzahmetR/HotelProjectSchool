@@ -220,4 +220,40 @@ INSERT [dbo].[Testimonials] ([TestimonialID], [Name], [TestimonialTitle], [Descr
 INSERT [dbo].[Testimonials] ([TestimonialID], [Name], [TestimonialTitle], [Description], [TestimonialImage]) VALUES (4, N'Elif Zünbül', N'Hastane Yönetim Sorumlusu', N'Huzur dolu bir konaklama! İş yoğunluğunda aradığım rahatlık.', N'/hotel-html-template/img/testimonial-4.jpg')
 SET IDENTITY_INSERT [dbo].[Testimonials] OFF
 GO
+-------------------------------------------------------------------------------------------------------------- SCRİPTİ ÇALIŞTIRDIKTAN SONRA BİR QUERY AÇIP AŞŞAĞIDAKİ TRİGGER KODLARINI KOPYALAYIP ÇALIŞTIRIN LÜTFEN--------------------------------------------------------------------------
+Create Trigger RoomDecrease
+on Rooms
+After Delete
+As
+Update Abouts Set RoomCount = RoomCount-1
+
+Create Trigger RoomIncrease
+on Rooms
+After Insert
+As
+Update Abouts Set RoomCount = RoomCount+1
+
+Create Trigger StaffDecrease
+on Staffs
+After Delete
+As
+Update Abouts Set StaffCount = StaffCount-1
+
+Create Trigger StaffIncrease
+on Staffs
+After Insert
+As
+Update Abouts Set StaffCount = StaffCount+1
+
+Create Trigger GuestDecrease
+on Guests
+After Delete
+As
+Update Abouts Set ClientCount = ClientCount-1
+
+Create Trigger GuestIncrease
+on Guests
+After Insert
+As
+Update Abouts Set ClientCount = ClientCount+1
 
