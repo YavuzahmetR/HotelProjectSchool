@@ -1,14 +1,40 @@
-# HotelProject
-Projenin çalıştırılabilmesi için gerekli hususlar : 
-1 - SQL Server Object Explorer'dan local veya bilgisayar adına varolan veritabanının(local tercihen) "Properties" Kısmından "Connection String" kısmının kopyalanıp Proje içinde "DataAccess" katmanında Context.cs sınıfında bulunan connection string ile değiştirilmesi.
-2 - Package Manager Console'un açılıp girilen yeni Connection String ile "Update-Database" komutunun çalıştırılması. !!! DEFAULT PROJECT kısmı "API_Folder\Hotel_Layer.DataAccess seçilmeli !!!
-3- Sonrasında SSMS'ten (bilgisayarda yüklü olmalı) paylaşacağım script new query açılarak çalıştırılmalı. (USE kısmının sizin connection string'te Initial Catalog'un karşılığında verilecek veritabanı ismi bulundurduğundan emin olun.)
-4- Artık veritabanı oluşturuldu ve datalar basılmış halde bulunacak. Projeyi ayağa kaldırmak için "Configure Startup Projects" kısmından Multiple Startup Projects'e ayarlayıp "UI VE API" seçilmeli. Çünkü bu proje api consume temelli ve statik veri sayısı inanılmaz derecede az.
-5- Gerçek Zamanda Mail göndermek isterseniz "AdminMailController" - Frontend kısmında "client.Authenticate("(sizin mailiniz)@gmail.com", "(uygulama şifresi)");" Google Eklentilerden uygulama anahtarlarını aratın ve "Visual Studio" Adına bir anahtar üretin. Başarılmadığı durumda mail üzerinden iletişime geçebilirim.
-6- RapidAPI Dashboard kısmında kullanıldı. Twitter Instagram Linkedin için. Follower ve Follow By Count'ları için. Bu yüzden genel olarak proje internet bağlantısı gerektiriyor!.
-7- Kullanıcı adı : damlataskin
-8- Şifre : 1
-9- Kayıt ol kısmından yeni kullanıcı yaratılabilir(Şifre Identity kütüphanesi default sınırlamalarından dolayı 6 sayısal karakter, 1 sembol, 1 büyük harf, 1 küçük harf içermeli). Sonrasında sidebar(Admin Paneli) ayarlar kısmından şifre ve kullanıcı adı güncellenebilir.(Veritabanında ilk indexte kim varsa kullanıcı bilgileri onun için geçerli!)
+# Hotel Project
+## Proje Çalıştırma Rehberi
+### Gereksinimler
+1 - Connection String Ayarı:
+
+SQL Server Object Explorer'dan, mevcut veritabanının (tercihen local) "Properties" bölümünden "Connection String" kısmını kopyalayın.
+Proje içindeki "DataAccess" katmanında bulunan Context.cs sınıfındaki connection string ile değiştirin.
+
+2 - Veritabanı Güncellemesi:
+
+Package Manager Console'u açın ve yeni connection string ile Update-Database komutunu çalıştırın.
+Not: "DEFAULT PROJECT" kısmında API_Folder\Hotel_Layer.DataAccess seçilmelidir.
+
+3 - Script Çalıştırma:
+
+SSMS (SQL Server Management Studio) yüklü olmalıdır. Paylaşılacak script ile yeni bir sorgu açarak çalıştırın.
+Not: USE kısmında, connection string’teki Initial Catalog ile aynı ismi taşıyan veritabanını kullandığınızdan emin olun.
+
+4 - Projenin Başlatılması:
+
+"Configure Startup Projects" kısmından "Multiple Startup Projects" ayarlayın ve "UI" ile "API"’yi seçin.
+Bu proje, API consume temelli olduğundan statik veri sayısı oldukça azdır.
+
+5 - Gerçek Zamanlı Mail Gönderimi:
+
+"AdminMailController" içerisinde, frontend kısmında client.Authenticate("(sizin mailiniz)@gmail.com", "(uygulama şifresi)"); kısmını ayarlayın.
+Google Eklentilerden uygulama anahtarlarını aratın ve "Visual Studio" adıyla bir anahtar üretin. Başarısız olursanız, mail ile iletişime geçebilirsiniz.
+
+6 - Internet Bağlantısı:
+
+Proje, RapidAPI Dashboard kullanarak Twitter, Instagram ve LinkedIn için follower ve follow by count’ları gerektirir. Bu yüzden internet bağlantısı gereklidir.
+Giriş Bilgileri
+Kullanıcı Adı: damlataskin
+Şifre: 1
+Kullanıcı Kaydı
+Kayıt ol kısmından yeni kullanıcı oluşturabilirsiniz. (Şifre, Identity kütüphanesi default sınırlamalarından dolayı 6 sayısal karakter, 1 sembol, 1 büyük harf ve 1 küçük harf içermelidir.)
+Sonrasında sidebar'dan (Admin Paneli) ayarlar kısmından şifre ve kullanıcı adını güncelleyebilirsiniz. (Veritabanında ilk indexteki kullanıcı bilgileri geçerli olacaktır!)
 
 -SQL DATA SCRİPT-
 --USE [C:\USERS\ARROW\SOURCE\REPOS\HOTELPROJECT\API_FOLDER\HOTEL_LAYER.DATAACCESS\BIN\DEBUG\NET7.0\HOTELLOCALDB.MDF]
