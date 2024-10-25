@@ -246,7 +246,11 @@ INSERT [dbo].[Testimonials] ([TestimonialID], [Name], [TestimonialTitle], [Descr
 INSERT [dbo].[Testimonials] ([TestimonialID], [Name], [TestimonialTitle], [Description], [TestimonialImage]) VALUES (4, N'Elif Zünbül', N'Hastane Yönetim Sorumlusu', N'Huzur dolu bir konaklama! İş yoğunluğunda aradığım rahatlık.', N'/hotel-html-template/img/testimonial-4.jpg')
 SET IDENTITY_INSERT [dbo].[Testimonials] OFF
 GO
--------------------------------------------------------------------------------------------------------------- SCRİPTİ ÇALIŞTIRDIKTAN SONRA BİR QUERY AÇIP AŞŞAĞIDAKİ TRİGGER KODLARINI KOPYALAYIP ÇALIŞTIRIN LÜTFEN--------------------------------------------------------------------------
+ 
+
+## SCRİPTİ ÇALIŞTIRDIKTAN SONRA BİR QUERY AÇIP AŞŞAĞIDAKİ TRİGGER KODLARINI KOPYALAYIP ÇALIŞTIRIN LÜTFEN
+
+
 Create Trigger RoomDecrease
 on Rooms
 After Delete
