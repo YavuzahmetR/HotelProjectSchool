@@ -1,38 +1,20 @@
-# Hotel Project
-## Proje Çalıştırma Rehberi
-### Gereksinimler
-1 - Connection String Ayarı:
+# Enterprise Hotel Management & Reservation System
 
-SQL Server Object Explorer'dan, mevcut veritabanının (tercihen local) "Properties" bölümünden "Connection String" kısmını kopyalayın.
-Proje içindeki "DataAccess" katmanında bulunan Context.cs sınıfındaki connection string ile değiştirin.
+An asynchronous, API-driven hotel administration and room booking platform developed with .NET 7. The system features a decoupled architecture where a rich administration UI consumes a central RESTful API to manage hotel operations, social proof counters, real-time mail notifications, and automated database-level statistics.
 
-2 - Veritabanı Güncellemesi:
+## 🚀 Key Features
 
-Package Manager Console'u açın ve yeni connection string ile Update-Database komutunu çalıştırın.
-Not: "DEFAULT PROJECT" kısmında API_Folder\Hotel_Layer.DataAccess seçilmelidir.
+* **Decoupled API-First Architecture:** Built on top of an API-consuming infrastructure, ensuring the presentation layer interacts purely with endpoints via asynchronous HTTP clients.
+* **Robust Authentication & Identity:** Integrated ASP.NET Core Identity for secure user enrollment and role-based dashboard access, enforcing strict password complexity rules.
+* **Automated Data Sync via SQL Triggers:** Implemented native SQL database triggers to dynamically adjust room, guest, and staff counts in real-time upon record mutations.
+* **Social Media Follower Integration:** Integrates with the RapidAPI dashboard to fetch and cache live follower metrics from Twitter, Instagram, and LinkedIn.
+* **Automated Mail Delivery:** Built-in SMTP engine powered by MailKit to authenticate through secure app-specific keys and send operational/administrative emails.
 
-3 - Script Çalıştırma:
+## 🛠️ Tech Stack & Dependencies
 
-SSMS (SQL Server Management Studio) yüklü olmalıdır. Paylaşılacak script ile yeni bir sorgu açarak çalıştırın.
-Not: USE kısmında, connection string’teki Initial Catalog ile aynı ismi taşıyan veritabanını kullandığınızdan emin olun.
-
-4 - Projenin Başlatılması:
-
-"Configure Startup Projects" kısmından "Multiple Startup Projects" ayarlayın ve "UI" ile "API"’yi seçin.
-Bu proje, API consume temelli olduğundan statik veri sayısı oldukça azdır.
-
-5 - Gerçek Zamanlı Mail Gönderimi:
-
-"AdminMailController" içerisinde, frontend kısmında client.Authenticate("(sizin mailiniz)@gmail.com", "(uygulama şifresi)"); kısmını ayarlayın.
-Google Eklentilerden uygulama anahtarlarını aratın ve "Visual Studio" adıyla bir anahtar üretin. Başarısız olursanız, mail ile iletişime geçebilirsiniz.
-
-6 - Internet Bağlantısı:
-
-Proje, RapidAPI Dashboard kullanarak Twitter, Instagram ve LinkedIn için follower ve follow by count’ları gerektirir. Bu yüzden internet bağlantısı gereklidir.
-Giriş Bilgileri
-Kullanıcı Adı: damlataskin
-Şifre: 1
-Kullanıcı Kaydı
-Kayıt ol kısmından yeni kullanıcı oluşturabilirsiniz. (Şifre, Identity kütüphanesi default sınırlamalarından dolayı 6 sayısal karakter, 1 sembol, 1 büyük harf ve 1 küçük harf içermelidir.)
-Sonrasında sidebar'dan (Admin Paneli) ayarlar kısmından şifre ve kullanıcı adını güncelleyebilirsiniz. (Veritabanında ilk indexteki kullanıcı bilgileri geçerli olacaktır!)
-
+* **Backend Engine:** .NET 7 (C#)
+* **Architecture:** N-Layer Data Architecture (MVC, Web API, DataAccess, Business, Entity, DTO)
+* **ORM & Database:** Entity Framework Core & SQL Server (LocalDB)
+* **Security & Auth:** ASP.NET Core Identity
+* **Third-Party Services:** RapidAPI (Social Analytics), MailKit & MimeKit (SMTP Service)
+* **Validation:** FluentValidation
