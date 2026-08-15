@@ -1,4 +1,4 @@
-# Enterprise Hotel Management & Reservation System
+#Hotel Management & Reservation System
 
 An asynchronous, API-driven hotel administration and room booking platform developed with .NET 7. The system features a decoupled architecture where a rich administration UI consumes a central RESTful API to manage hotel operations, social proof counters, real-time mail notifications, and automated database-level statistics.
 
